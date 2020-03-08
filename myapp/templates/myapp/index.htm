@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FF99FF;
+            height: 100vh;
+        }
+        
+        #login .container #login-row #login-column #login-box {
+            margin-top: 120px;
+            max-width: 600px;
+            height: 450px;
+            border: 1px solid #AF7AC5;
+            background-color: rgb(204, 239, 255);
+        }
+        
+        #login .container #login-row #login-column #login-box #login-form {
+            padding: 20px;
+        }
+        
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+            margin-top: -85px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login">
+        <h3 class="text-center pt-5" style="color: rgb(245, 7, 245);">DATASCIENCE PROJECT</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form role="form" action="/chatgroup" method="POST">
+                            {% csrf_token %}
+                            <h3 class="text-center" style="color: rgb(245, 7, 245);">บทสนทนา</h3>
+                            <div class="form-group">
+                                <textarea name="data" id="" cols="30" rows="10" class="form-control"></textarea>
+
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-ganger btn-md" value="submit"><br/><br/>
+                                <h5 class="text-center" style="color: rgb(245, 7, 245);">Classification : {{ result }}</h5>
+                                <h5 class="text-center" style="color: rgb(245, 7, 245);">Accuracy : {{Accuracy}} %</h5>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
